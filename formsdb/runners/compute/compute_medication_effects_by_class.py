@@ -179,9 +179,17 @@ def get_subject_medication_effects_info_by_class(
                     ap_equivalent_drug_dose_estimated_taken = sum_or_none(
                         med_class_df["ap_equivalent_drug_dose_estimated_taken"]
                     )
+                    ap_equivalent_drug_dose_prescribed_leucht = sum_or_none(
+                        med_class_df["ap_equivalent_drug_dose_prescribed_leucht"]
+                    )
+                    ap_equivalent_drug_dose_estimated_taken_leucht = sum_or_none(
+                        med_class_df["ap_equivalent_drug_dose_estimated_taken_leucht"]
+                    )
                 else:
                     ap_equivalent_drug_dose_prescribed = None
                     ap_equivalent_drug_dose_estimated_taken = None
+                    ap_equivalent_drug_dose_prescribed_leucht = None
+                    ap_equivalent_drug_dose_estimated_taken_leucht = None
 
                 if med_class == "BENZODIAZEPINE":
                     bd_equivalent_drug_dose_prescribed = sum_or_none(
@@ -221,6 +229,8 @@ def get_subject_medication_effects_info_by_class(
                     "ever_used": ever_used,
                     "ap_equivalent_drug_dose_prescribed": ap_equivalent_drug_dose_prescribed,
                     "ap_equivalent_drug_dose_estimated_taken": ap_equivalent_drug_dose_estimated_taken,
+                    "ap_equivalent_drug_dose_prescribed_leucht": ap_equivalent_drug_dose_prescribed_leucht,
+                    "ap_equivalent_drug_dose_estimated_taken_leucht": ap_equivalent_drug_dose_estimated_taken_leucht,
                     "bd_equivalent_drug_dose_prescribed": bd_equivalent_drug_dose_prescribed,
                     "bd_equivalent_drug_dose_estimated_taken": bd_equivalent_drug_dose_estimated_taken,
                     "prescribed_equivalent_drug_dose_for_day":
@@ -281,6 +291,8 @@ def compile_medication_effects(
         "days_from_consent",
         "ap_equivalent_drug_dose_prescribed",
         "ap_equivalent_drug_dose_estimated_taken",
+        "ap_equivalent_drug_dose_prescribed_leucht",
+        "ap_equivalent_drug_dose_estimated_taken_leucht",
         "bd_equivalent_drug_dose_prescribed",
         "bd_equivalent_drug_dose_estimated_taken",
         "current_use",
